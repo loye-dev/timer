@@ -1,0 +1,32 @@
+{
+  "name": "timer-loye-dev",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "docker:build": "export $(cat .env | xargs) && docker build --build-arg PLAUSIBLE_URL --build-arg PLAUSIBLE_DOMAIN -t loye-dev ."
+  },
+  "dependencies": {
+    "@nuxt/ui": "^4.6.1",
+    "nuxt": "^4.4.2",
+    "tailwindcss": "^4.2.2",
+    "vue": "^3.5.32",
+    "vue-router": "^5.0.4"
+  },
+  "devDependencies": {
+    "@iconify-json/simple-icons": "^1.2.79",
+    "@iconify-json/tabler": "^1.2.33",
+    "@nuxt/eslint": "^1.15.2",
+    "@nuxtjs/plausible": "^3.0.2",
+    "@types/node": "^25.6.0",
+    "eslint": "^10.2.1",
+    "prettier": "^3.8.3"
+  }
+}

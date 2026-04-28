@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+
+@theme {
+  --color-neutral-50: oklch(98.5% 0 0);
+  --color-neutral-100: oklch(97% 0 0);
+  --color-neutral-200: oklch(92.2% 0 0);
+  --color-neutral-300: oklch(87% 0 0);
+  --color-neutral-400: oklch(70.8% 0 0);
+  --color-neutral-500: oklch(55.6% 0 0);
+  --color-neutral-600: oklch(43.9% 0 0);
+  --color-neutral-700: oklch(37.1% 0 0);
+  --color-neutral-800: oklch(26.9% 0 0);
+  --color-neutral-900: oklch(20.5% 0 0);
+  --color-neutral-950: oklch(14.5% 0 0);
+}
+
+:root {
+  --ui-bg: var(--color-neutral-50);
+  --ui-bg-muted: var(--color-neutral-100);
+  --ui-bg-elevated: var(--color-neutral-100);
+  --ui-bg-accented: var(--color-neutral-200);
+  --ui-bg-inverted: var(--color-neutral-900);
+  --ui-text: var(--color-neutral-900);
+  --ui-text-muted: var(--color-neutral-500);
+  --ui-text-dimmed: var(--color-neutral-400);
+  --ui-text-highlighted: var(--color-neutral-950);
+  --ui-text-inverted: var(--color-neutral-50);
+  --ui-primary: black;
+}
+
+.dark {
+  --ui-bg: var(--color-neutral-900);
+  --ui-bg-muted: var(--color-neutral-800);
+  --ui-bg-elevated: var(--color-neutral-800);
+  --ui-bg-accented: var(--color-neutral-700);
+  --ui-bg-inverted: var(--color-neutral-50);
+  --ui-text: var(--color-neutral-50);
+  --ui-text-muted: var(--color-neutral-400);
+  --ui-text-dimmed: var(--color-neutral-500);
+  --ui-text-highlighted: white;
+  --ui-text-inverted: var(--color-neutral-900);
+  --ui-primary: white;
+}
+
+html {
+  background-color: var(--ui-bg);
+}
