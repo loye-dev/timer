@@ -11,22 +11,26 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "docker:build": "export $(cat .env | xargs) && docker build --build-arg PLAUSIBLE_URL --build-arg PLAUSIBLE_DOMAIN -t loye-dev ."
+    "docker:build": "export $(cat .env | xargs) && docker build --build-arg PLAUSIBLE_URL --build-arg PLAUSIBLE_DOMAIN -t timer-loye-dev ."
   },
   "dependencies": {
-    "@nuxt/ui": "^4.6.1",
-    "nuxt": "^4.4.2",
-    "tailwindcss": "^4.2.2",
-    "vue": "^3.5.32",
-    "vue-router": "^5.0.4"
+    "@number-flow/vue": "^0.5.0",
+    "@nuxt/ui": "^4.8.0",
+    "canvas-confetti": "^1.9.4",
+    "nuxt": "^4.4.6",
+    "tailwindcss": "^4.3.0",
+    "vue": "^3.5.34",
+    "vue-router": "^5.0.7"
   },
   "devDependencies": {
-    "@iconify-json/simple-icons": "^1.2.79",
-    "@iconify-json/tabler": "^1.2.33",
+    "@iconify-json/simple-icons": "^1.2.83",
+    "@iconify-json/tabler": "^1.2.35",
     "@nuxt/eslint": "^1.15.2",
     "@nuxtjs/plausible": "^3.0.2",
-    "@types/node": "^25.6.0",
-    "eslint": "^10.2.1",
-    "prettier": "^3.8.3"
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^25.9.1",
+    "eslint": "^10.4.0",
+    "prettier": "^3.8.3",
+    "prettier-plugin-tailwindcss": "^0.8.0"
   }
 }
