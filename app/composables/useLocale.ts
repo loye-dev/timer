@@ -72,7 +72,7 @@ const translations = {
     toReset: 'zum Zurücksetzen',
     hours: 'h',
     minutes: 'min',
-    seconds: 'Sek',
+    seconds: 'sek',
   },
   pt: {
     start: 'Iniciar',
