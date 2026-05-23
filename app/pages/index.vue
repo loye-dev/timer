@@ -65,7 +65,9 @@
   const displayTrend = computed(() => (state.value === 'running' ? -1 : undefined))
 
   function onKeydown(e: KeyboardEvent) {
-    if (e.target instanceof HTMLButtonElement) return
+    const el = e.target as HTMLElement
+    if (el instanceof HTMLButtonElement) return
+    if (el.closest('[role="menu"]')) return
     if (e.code === 'Space') {
       e.preventDefault()
       if (state.value === 'running') pause()
@@ -79,6 +81,10 @@
 
   onMounted(() => window.addEventListener('keydown', onKeydown))
   onUnmounted(() => window.removeEventListener('keydown', onKeydown))
+
+  function onLocaleMenuClose(open: boolean) {
+    if (!open) (document.activeElement as HTMLElement)?.blur()
+  }
 </script>
 
 <template>
@@ -126,7 +132,11 @@
       class="fixed top-4 right-4 cursor-pointer opacity-30 hover:opacity-70"
       @click="toggleFullscreen"
     />
-    <UDropdownMenu :items="localeItems" :content="{ side: 'top', align: 'start' }">
+    <UDropdownMenu
+      :items="localeItems"
+      :content="{ side: 'top', align: 'start' }"
+      @update:open="onLocaleMenuClose"
+    >
       <UButton
         variant="ghost"
         color="neutral"
