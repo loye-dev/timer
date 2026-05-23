@@ -24,7 +24,7 @@
       :disabled="!canStart"
       @click="emit('start')"
     >
-      {{ state === 'paused' ? 'Reprendre' : state === 'finished' ? 'Relancer' : 'Démarrer' }}
+      {{ state === 'paused' ? 'Resume' : state === 'finished' ? 'Restart' : 'Start' }}
     </UButton>
 
     <!-- Pause -->
@@ -50,7 +50,7 @@
       variant="ghost"
       @click="emit('reset')"
     >
-      Réinitialiser
+      Reset
     </UButton>
   </div>
 </template>

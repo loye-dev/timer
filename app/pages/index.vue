@@ -65,10 +65,10 @@
     />
 
     <p v-if="state === 'idle'" class="text-muted cursor-default text-xs">
-      Espace pour démarrer · R pour réinitialiser
+      Space to start · R to reset
     </p>
     <p v-else class="text-muted cursor-default text-xs">
-      Espace pour {{ state === 'running' ? 'mettre en pause' : 'reprendre' }} · R pour réinitialiser
+      Space to {{ state === 'running' ? 'pause' : 'resume' }} · R to reset
     </p>
     <UButton
       to="https://github.com/loye-dev/timer"
