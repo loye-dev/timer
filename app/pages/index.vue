@@ -13,7 +13,18 @@
     adjustSeconds,
   } = useTimer()
   const { launch: launchConfetti, stop: stopConfetti } = useConfetti()
-  const { t } = useLocale()
+  const { t, locale, setLocale } = useLocale()
+
+  const localeItems = [
+    [
+      { label: 'English', onSelect: () => setLocale('en') },
+      { label: 'Français', onSelect: () => setLocale('fr') },
+      { label: 'Español', onSelect: () => setLocale('es') },
+      { label: 'Italiano', onSelect: () => setLocale('it') },
+      { label: 'Deutsch', onSelect: () => setLocale('de') },
+      { label: 'Português', onSelect: () => setLocale('pt') },
+    ],
+  ]
 
   const colorMode = useColorMode()
 
@@ -104,6 +115,15 @@
       class="fixed top-4 right-4 opacity-30 hover:opacity-70"
       @click="toggleFullscreen"
     />
+    <UDropdownMenu :items="localeItems" :content="{ side: 'top', align: 'start' }">
+      <UButton
+        variant="ghost"
+        color="neutral"
+        class="fixed bottom-4 left-4 font-mono text-xs opacity-30 hover:opacity-70"
+      >
+        {{ locale }}
+      </UButton>
+    </UDropdownMenu>
     <UButton
       to="https://github.com/loye-dev/timer"
       target="_blank"
