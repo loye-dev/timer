@@ -13,6 +13,7 @@
     adjustSeconds,
   } = useTimer()
   const { launch: launchConfetti, stop: stopConfetti } = useConfetti()
+  const { t } = useLocale()
 
   const colorMode = useColorMode()
 
@@ -83,17 +84,17 @@
     />
 
     <p class="text-muted flex cursor-default items-center gap-1.5 text-xs">
-      <UKbd size="sm" value="space" />
-      to {{ state === 'idle' ? 'start' : state === 'running' ? 'pause' : 'resume' }}
+      <UKbd size="sm" :value="t.kbdSpace" />
+      {{ state === 'idle' ? t.toStart : state === 'running' ? t.toPause : t.toResume }}
       <span class="mx-0.5">·</span>
       <UKbd size="sm" value="R" />
-      to reset
+      {{ t.toReset }}
     </p>
     <UButton
       :icon="colorMode.value === 'dark' ? 'tabler:moon' : 'tabler:sun'"
       variant="ghost"
       color="neutral"
-      class="fixed left-4 top-4 opacity-30 hover:opacity-70"
+      class="fixed top-4 left-4 opacity-30 hover:opacity-70"
       @click="colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'"
     />
     <UButton

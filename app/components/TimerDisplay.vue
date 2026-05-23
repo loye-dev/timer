@@ -1,6 +1,8 @@
 <script setup lang="ts">
   import NumberFlow from '@number-flow/vue'
 
+  const { t } = useLocale()
+
   const props = defineProps<{
     hours: number
     minutes: number
@@ -150,14 +152,16 @@
 
     <!-- Row 4: labels (adjustable only) -->
     <template v-if="adjustable">
-      <p class="text-muted cursor-default pt-1 text-center text-xs tracking-widest uppercase">h</p>
-      <div />
       <p class="text-muted cursor-default pt-1 text-center text-xs tracking-widest uppercase">
-        min
+        {{ t.hours }}
       </p>
       <div />
       <p class="text-muted cursor-default pt-1 text-center text-xs tracking-widest uppercase">
-        sec
+        {{ t.minutes }}
+      </p>
+      <div />
+      <p class="text-muted cursor-default pt-1 text-center text-xs tracking-widest uppercase">
+        {{ t.seconds }}
       </p>
     </template>
   </div>

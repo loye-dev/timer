@@ -11,6 +11,8 @@
     pause: []
     reset: []
   }>()
+
+  const { t } = useLocale()
 </script>
 
 <template>
@@ -24,7 +26,7 @@
       :disabled="!canStart"
       @click="emit('start')"
     >
-      {{ state === 'paused' ? 'Resume' : state === 'finished' ? 'Restart' : 'Start' }}
+      {{ state === 'paused' ? t.resume : state === 'finished' ? t.restart : t.start }}
     </UButton>
 
     <!-- Pause -->
@@ -37,7 +39,7 @@
       variant="outline"
       @click="emit('pause')"
     >
-      Pause
+      {{ t.pause }}
     </UButton>
 
     <!-- Reset -->
@@ -50,7 +52,7 @@
       variant="ghost"
       @click="emit('reset')"
     >
-      Reset
+      {{ t.reset }}
     </UButton>
   </div>
 </template>
