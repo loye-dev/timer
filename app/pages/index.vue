@@ -65,10 +65,10 @@
     />
 
     <p class="text-muted flex cursor-default items-center gap-1.5 text-xs">
-      <UKbd size="sm">Space</UKbd>
+      <UKbd size="sm" value="space" />
       to {{ state === 'idle' ? 'start' : state === 'running' ? 'pause' : 'resume' }}
       <span class="mx-0.5">·</span>
-      <UKbd size="sm">R</UKbd>
+      <UKbd size="sm" value="R" />
       to reset
     </p>
     <UButton
