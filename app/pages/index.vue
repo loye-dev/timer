@@ -116,21 +116,21 @@
       :icon="colorMode.value === 'dark' ? 'tabler:moon' : 'tabler:sun'"
       variant="ghost"
       color="neutral"
-      class="fixed top-4 left-4 opacity-30 hover:opacity-70"
+      class="fixed top-4 left-4 cursor-pointer opacity-30 hover:opacity-70"
       @click="colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'"
     />
     <UButton
       :icon="isFullscreen ? 'tabler:minimize' : 'tabler:maximize'"
       variant="ghost"
       color="neutral"
-      class="fixed top-4 right-4 opacity-30 hover:opacity-70"
+      class="fixed top-4 right-4 cursor-pointer opacity-30 hover:opacity-70"
       @click="toggleFullscreen"
     />
     <UDropdownMenu :items="localeItems" :content="{ side: 'top', align: 'start' }">
       <UButton
         variant="ghost"
         color="neutral"
-        class="fixed bottom-4 left-4 font-mono text-xs opacity-30 hover:opacity-70"
+        class="fixed bottom-4 left-4 cursor-pointer font-mono text-xs opacity-30 hover:opacity-70"
       >
         {{ locale }}
       </UButton>
@@ -141,7 +141,7 @@
       icon="simple-icons:github"
       variant="ghost"
       color="neutral"
-      class="fixed right-4 bottom-4 opacity-30 hover:opacity-70"
+      class="fixed right-4 bottom-4 cursor-pointer opacity-30 hover:opacity-70"
     />
   </div>
 </template>
