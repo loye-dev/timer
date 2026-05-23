@@ -14,6 +14,8 @@
   } = useTimer()
   const { launch: launchConfetti, stop: stopConfetti } = useConfetti()
 
+  const colorMode = useColorMode()
+
   const isFullscreen = ref(false)
 
   function toggleFullscreen() {
@@ -87,6 +89,13 @@
       <UKbd size="sm" value="R" />
       to reset
     </p>
+    <UButton
+      :icon="colorMode.value === 'dark' ? 'tabler:moon' : 'tabler:sun'"
+      variant="ghost"
+      color="neutral"
+      class="fixed left-4 top-4 opacity-30 hover:opacity-70"
+      @click="colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'"
+    />
     <UButton
       :icon="isFullscreen ? 'tabler:minimize' : 'tabler:maximize'"
       variant="ghost"

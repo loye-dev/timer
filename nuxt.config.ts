@@ -20,5 +20,8 @@ export default defineNuxtConfig({
     domain: process.env.PLAUSIBLE_DOMAIN || '',
     autoOutboundTracking: true,
   },
+  colorMode: {
+    storage: 'sessionStorage',
+  },
   css: ['~/assets/css/main.css'],
 })
