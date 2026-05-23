@@ -14,6 +14,22 @@
   } = useTimer()
   const { launch: launchConfetti, stop: stopConfetti } = useConfetti()
 
+  const isFullscreen = ref(false)
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen()
+    } else {
+      document.exitFullscreen()
+    }
+  }
+
+  onMounted(() => {
+    document.addEventListener('fullscreenchange', () => {
+      isFullscreen.value = !!document.fullscreenElement
+    })
+  })
+
   watch(state, (newState) => {
     if (newState === 'finished') launchConfetti()
     if (newState === 'idle') stopConfetti()
@@ -71,6 +87,13 @@
       <UKbd size="sm" value="R" />
       to reset
     </p>
+    <UButton
+      :icon="isFullscreen ? 'tabler:minimize' : 'tabler:maximize'"
+      variant="ghost"
+      color="neutral"
+      class="fixed top-4 right-4 opacity-30 hover:opacity-70"
+      @click="toggleFullscreen"
+    />
     <UButton
       to="https://github.com/loye-dev/timer"
       target="_blank"
