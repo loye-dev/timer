@@ -11,7 +11,16 @@
     adjustHours,
     adjustMinutes,
     adjustSeconds,
+    remaining,
   } = useTimer()
+
+  const endTime = computed(() => {
+    if (state.value !== 'running') return null
+    return new Date(Date.now() + remaining.value * 1000).toLocaleTimeString(locale.value, {
+      hour: '2-digit',
+      minute: '2-digit',
+    })
+  })
   const { launch: launchConfetti, stop: stopConfetti } = useConfetti()
   const { t, locale, setLocale } = useLocale()
 
@@ -85,6 +94,8 @@
       @adjust-minutes="adjustMinutes"
       @adjust-seconds="adjustSeconds"
     />
+
+    <p v-if="endTime" class="text-muted cursor-default text-xs">{{ t.endsAt }} {{ endTime }}</p>
 
     <TimerControls
       :state="state"
