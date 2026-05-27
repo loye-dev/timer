@@ -19,11 +19,11 @@
     "canvas-confetti": "^1.9.4",
     "nuxt": "^4.4.6",
     "tailwindcss": "^4.3.0",
-    "vue": "^3.5.34",
+    "vue": "^3.5.35",
     "vue-router": "^5.0.7"
   },
   "devDependencies": {
-    "@iconify-json/simple-icons": "^1.2.83",
+    "@iconify-json/simple-icons": "^1.2.84",
     "@iconify-json/tabler": "^1.2.35",
     "@nuxt/eslint": "^1.15.2",
     "@nuxtjs/plausible": "^3.0.2",
